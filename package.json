@@ -1,0 +1,49 @@
+{
+  "name": "koi-code-aquarium",
+  "version": "1.2.1",
+  "description": "Animated, high-resolution koi aquarium for your GitHub profile README: one git-koi per programming language, as a vector SVG.",
+  "type": "module",
+  "bin": {
+    "koi-code-aquarium": "koi-aquarium.mjs"
+  },
+  "files": [
+    "koi-aquarium.mjs",
+    "action.yml",
+    "LICENSE",
+    "NOTICE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "check": "node --check koi-aquarium.mjs && node koi-aquarium.mjs --help"
+  },
+  "keywords": [
+    "github-profile",
+    "github-profile-readme",
+    "profile-readme",
+    "readme",
+    "github-readme",
+    "awesome-readme",
+    "koi",
+    "aquarium",
+    "pixel-art",
+    "svg",
+    "animated-svg",
+    "github-action",
+    "github-actions",
+    "programming-languages",
+    "developer-tools",
+    "git-koi"
+  ],
+  "homepage": "https://github.com/azizulabedinazmi/Koi-Code-Aquarium#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/azizulabedinazmi/Koi-Code-Aquarium.git"
+  },
+  "bugs": {
+    "url": "https://github.com/azizulabedinazmi/Koi-Code-Aquarium/issues"
+  },
+  "author": "Azizul Abedin Azmi (https://github.com/azizulabedinazmi)",
+  "license": "Apache-2.0"
+}

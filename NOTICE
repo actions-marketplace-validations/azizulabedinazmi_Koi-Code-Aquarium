@@ -1,0 +1,18 @@
+Koi-Code-Aquarium
+Copyright 2026 Azizul Abedin Azmi
+https://github.com/azizulabedinazmi/Koi-Code-Aquarium
+
+This product is licensed under the Apache License, Version 2.0 (see LICENSE).
+Redistributions and derivative works must keep this NOTICE file and credit the
+original project.
+
+Third-party software used at run time (not included in this repository):
+
+  git-koi — https://github.com/yalongwastaken/git-koi
+  Copyright (c) Anthony Yalong. Licensed under the MIT License.
+  Koi-Code-Aquarium downloads and runs the official git-koi release to draw
+  each koi.
+
+Inspiration:
+
+  git-koi-aquarium — https://github.com/reginaldalfret/git-koi-aquarium (MIT)

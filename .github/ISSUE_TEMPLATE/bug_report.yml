@@ -1,0 +1,41 @@
+name: 🐛 Bug report
+description: Something in the aquarium looks or works wrong
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for reporting! A screenshot helps the most.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What did you expect, and what did you see instead?
+    validations:
+      required: true
+  - type: input
+    id: profile
+    attributes:
+      label: Profile or repo where it happens
+      placeholder: https://github.com/your-login
+  - type: dropdown
+    id: where
+    attributes:
+      label: How do you run it?
+      options:
+        - GitHub Action
+        - Locally (Windows)
+        - Locally (macOS)
+        - Locally (Linux)
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: The `@v...` tag in your workflow, or `node koi-aquarium.mjs --version`
+      placeholder: v1.2.0
+  - type: textarea
+    id: logs
+    attributes:
+      label: Output or error message
+      render: text

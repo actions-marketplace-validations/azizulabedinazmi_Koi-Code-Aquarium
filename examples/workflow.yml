@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: azizulabedinazmi/koi-code-aquarium@v1
+      - uses: azizulabedinazmi/Koi-Code-Aquarium@v1
         with:
           out: koi/aquarium.svg
           # max-fish: 12

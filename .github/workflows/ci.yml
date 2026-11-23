@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Syntax check
+        run: node --check koi-aquarium.mjs
+      - name: CLI smoke test
+        run: |
+          node koi-aquarium.mjs --version
+          node koi-aquarium.mjs --help > /dev/null
+          # bad input must fail with a clear message
+          if node koi-aquarium.mjs --user x --max-fish 0 2>err.txt; then exit 1; fi
+          grep -q "max-fish" err.txt
+      - name: Demo SVG is valid XML
+        run: python3 -c "import xml.dom.minidom,sys; xml.dom.minidom.parse('assets/demo.svg'); print('demo.svg ok')"

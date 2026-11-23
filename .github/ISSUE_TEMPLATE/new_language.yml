@@ -1,0 +1,27 @@
+name: 🧩 Add snippets for a language
+description: Add background code lines for a language (a great first contribution)
+labels: [good first issue, language]
+body:
+  - type: input
+    id: language
+    attributes:
+      label: Language name
+      description: Exactly as GitHub shows it, for example "Kotlin", "Jupyter Notebook" or "C#"
+    validations:
+      required: true
+  - type: textarea
+    id: snippets
+    attributes:
+      label: 2–3 short, koi-themed code lines
+      placeholder: |
+        fun swim(koi: Koi) = koi.glide()
+        val pond = mutableListOf<Koi>()
+      render: text
+    validations:
+      required: true
+  - type: checkboxes
+    id: pr
+    attributes:
+      label: Contributing
+      options:
+        - label: I'll open a pull request adding these to `SNIPPETS` in koi-aquarium.mjs
