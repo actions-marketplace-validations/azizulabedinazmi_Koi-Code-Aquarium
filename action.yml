@@ -1,7 +1,5 @@
 name: Koi-Code-Aquarium
-description: >-
-  Draw a high-resolution, animated koi aquarium for a profile README: one git-koi per
-  programming language in your public repositories, as a vector SVG.
+description: "Animated, high-res koi aquarium for your GitHub profile README: one pixel-art koi per programming language."
 branding:
   icon: droplet
   color: blue

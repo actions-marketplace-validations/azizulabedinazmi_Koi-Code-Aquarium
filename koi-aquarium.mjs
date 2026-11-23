@@ -17,7 +17,7 @@ import { tmpdir, homedir } from "node:os";
 import { execFileSync } from "node:child_process";
 import { inflateSync } from "node:zlib";
 
-const VERSION = "1.2.1";
+const VERSION = "1.2.2";
 const W = 1600; // the SVG is vector; this is only its coordinate size
 const HEADER_H = 88;
 const POND_H = 580;
