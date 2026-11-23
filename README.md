@@ -8,7 +8,7 @@ A high-resolution, animated koi aquarium for your GitHub profile README.
 </p>
 
 - **One koi per language.** Each fish is drawn by [git-koi](https://github.com/yalongwastaken/git-koi) with only that language's official GitHub colour, so its spots show the language.
-- **Sized by repos.** The more public repositories use a language, the bigger its koi.
+- **Grows with your repos.** A koi's length is proportional to how many public repositories use its language, so your top language is the biggest fish and a 1-repo language is a small one. Add a repo in a language, and its koi grows on the next run.
 - **High resolution.** Every git-koi pixel becomes a vector square, so the pixel art stays sharp on any screen and at any zoom.
 - **Coding theme.** A terminal bar, a dark pond with a grid, faint code written in your languages, glowing circuit traces and rising `{ }` `</>` bubbles, plus a `languages.json` bar under the pond.
 - **Custom wallpaper.** Use any image as the pond background.
@@ -77,7 +77,8 @@ Drawing takes about a minute, because git-koi draws each fish separately.
 2. **Collect activity.** `git-koi collect` reads your public activity once. That sets the koi's growth and pose.
 3. **One koi per language.** For each language, that activity is copied with every repository set to that one language, and `git-koi render` draws a koi spotted only in its colour. Pale colours, such as JavaScript yellow, get git-koi's black koi so the spots stay visible; other colours get the white koi.
 4. **Vectorise.** The koi PNG is decoded with Node's built-in zlib. Same-coloured pixels are merged into as few rectangles as possible, and drawn with `shape-rendering="crispEdges"`.
-5. **Swim.** Each fish follows its own smooth loop with `animateMotion` and always faces the way it swims. The back third of its body wags as the tail.
+5. **Size.** Each koi's length is `84 + 176 × (its repos ÷ the top language's repos)` SVG units, so the top language is 260 and a language with 1 of 10 repos is about 102.
+6. **Swim.** Each fish follows its own smooth loop with `animateMotion` and always faces the way it swims. The back third of its body wags as the tail.
 
 The pond layout comes from a seed made of your login and languages, so the same data always draws the same pond.
 
