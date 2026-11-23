@@ -1,0 +1,37 @@
+# Copy into your profile repository as .github/workflows/koi-aquarium.yml, then add
+#   <img src="koi/aquarium.svg" width="100%" alt="Koi aquarium">
+# to its README.md.
+name: Koi aquarium
+
+on:
+  schedule:
+    - cron: "20 0 * * *" # nightly, just after midnight UTC
+  workflow_dispatch:
+  push:
+    paths: [.github/workflows/koi-aquarium.yml]
+
+permissions:
+  contents: write
+
+concurrency: koi-aquarium
+
+jobs:
+  aquarium:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: azizulabedinazmi/koi-code-aquarium@v1
+        with:
+          out: koi/aquarium.svg
+          # max-fish: 12
+          # theme: code
+          # wallpaper: assets/my-wallpaper.jpg
+      - name: Commit the aquarium if it changed
+        shell: bash
+        run: |
+          git add koi/aquarium.svg
+          if git diff --cached --quiet; then echo "Aquarium unchanged."; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit --quiet -m "Update koi aquarium"
+          git push --quiet
