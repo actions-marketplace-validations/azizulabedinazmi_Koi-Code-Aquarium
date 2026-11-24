@@ -38,7 +38,7 @@
 - **🔍 Truly high resolution.** Every pixel becomes a vector square, so the art stays sharp on retina screens and at any zoom.
 - **💻 Coding theme.** A terminal bar, a dark pond with a grid, faint code written in *your* languages, glowing circuit traces, rising `{ }` `</>` bubbles, and a `languages.json` legend.
 - **🖼️ Custom wallpaper.** Use any image as the pond background.
-- **🎞️ Animated on GitHub.** It uses SVG's built-in animation tags (SMIL), which keep playing inside a README `<img>`. The fish swim head-first and their tails wag.
+- **🎞️ Animated on GitHub.** It uses SVG's built-in animation tags (SMIL), which keep playing inside a README `<img>`. The fish swim head-first: a wave runs down each body from head to tail and the side fins paddle.
 - **⚡ Zero dependencies.** One Node.js file. Run it as a GitHub Action, with `npx`, or locally.
 
 ## 🚀 Quick start (GitHub Action)
@@ -116,7 +116,7 @@ node koi-aquarium.mjs --user <your-login> --git-koi /path/to/git-koi --out koi/a
 3. **One koi per language.** For each language, `git-koi render` draws a koi spotted only in that colour. Pale colours get git-koi's black koi so the spots stay visible.
 4. **Vectorise.** The koi PNG is decoded with Node's built-in zlib, and same-coloured pixels are merged into as few vector rectangles as possible.
 5. **Size.** Each koi's length is `84 + 176 × (its repos ÷ your top language's repos)`, so your top language is the biggest fish.
-6. **Swim.** Each koi follows its own smooth loop with `animateMotion`, always facing the way it swims, while its tail wags.
+6. **Swim.** Each koi follows its own smooth loop with `animateMotion`, always facing the way it swims. The koi is cut into a chain of body segments that bend one after another, so a wave travels from a gently swaying head down to the tail fan, while the side fins paddle in turn.
 
 The same data always draws the same pond, so the file only changes when your languages or activity change.
 
